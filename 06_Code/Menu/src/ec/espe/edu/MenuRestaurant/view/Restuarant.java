@@ -1,4 +1,4 @@
-package menu;
+package ec.espe.edu.MenuRestaurant.view;
 
 import java.util.Scanner;
 /**
