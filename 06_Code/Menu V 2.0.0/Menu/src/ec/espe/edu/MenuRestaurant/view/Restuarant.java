@@ -1,6 +1,6 @@
 package ec.espe.edu.MenuRestaurant.view;
 
-import java.util.Scanner;
+import java.util.*;
 import ec.espe.edu.MenuRestaurant.model.DataCreation;
 /**
  *
@@ -9,7 +9,9 @@ import ec.espe.edu.MenuRestaurant.model.DataCreation;
 public class Restuarant {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int option = 0;
+        int optionMenu = 0;
+        int optionSubmenu;
+        boolean leave = false;
         DataCreation.createFile("Order.csv");
         do{
         System.out.println("*******Choose the option******");
@@ -20,9 +22,9 @@ public class Restuarant {
         
         
         System.out.print("Please type the option: ");
-        option = sc.nextInt();
+        optionMenu = sc.nextInt();
             
-            switch(option){
+            switch(optionMenu){
                
                 case 1 -> {
                     System.out.println("**********Enter Data********");
@@ -45,28 +47,61 @@ public class Restuarant {
                     DataCreation.writeFile("Order.csv", email);
                 }
                 case 2 -> {
-                    
-                    System.out.println("============== MENU ================");
-                    System.out.println("|  Select the food you want:       |" );
-                    System.out.println("|    1. Lasagna    $6.00           |");
-                    System.out.println("|    2. Milanesa   $2.00           |");
-                    System.out.println("|    3. Rabioles   $7.00           |");
-                    System.out.println("|      (Parmesan, spinach)         |");
-                    System.out.println("|    4. Tortellini $7.00           |");
-                    System.out.println("|      (Mozarrella, alfredo sauce) |");
-                    System.out.println("|    5. Pizza      $6.00            |");
-                    System.out.println("|    6. Panini     $6.00           |");
-                    System.out.println("====================================");
-
+                    while(!leave){
+                        System.out.println("-----Menu Food-----");
+                        System.out.println("1. Pizza");
+                        System.out.println("2. Milanesa");
+                        System.out.println("3. Panini");
+                        System.out.println("4. Rissoto");
+                        System.out.println("5. Drink");
+                        System.out.println("6. Exit");
+                        
+                        try{
+                        
+                            System.out.println("Enter what you want to order");
+                            optionSubmenu = sc.nextInt();
+                            
+                            switch (optionSubmenu) {
+                                case 1 ->{
+                                    System.out.println("You order a Pizza");
+                                break;
+                                }
+                                case 2 ->{
+                                    System.out.println("You order a Milanesa");
+                                break;
+                                }
+                                case 3 ->{
+                                    System.out.println("You order a Panini");
+                                break;
+                                }
+                                case 4 ->{
+                                    System.out.println("Your order a Rissoto");
+                                break;
+                                }
+                                case 5 ->{
+                                    System.out.println("You order a drink");
+                                break;
+                                }
+                                case 6 ->{
+                                return;
+                                }
+                                }
+                        }catch(InputMismatchException e){
+                            System.out.println("You have to enter a number");
+                            sc.next();
+                        }
+                    }
                 }
                 case 3 -> {
                     System.out.println("Your bill has been paid ");
                 }
                 case 4 -> {
+                
+                return;
                 }
         }
             
-        }while(option!=4);
+        }while(optionMenu != 4);
     }
-    
+        
 }
