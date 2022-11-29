@@ -10,17 +10,17 @@ public class Restuarant {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int optionMenu = 0;
-        int optionSubmenu;
+        int optionSubmenu=0;
         boolean leave = false;
         DataCreation.createFile("Order.csv");
         do{
+        System.out.println("***********************************************");
         System.out.println("*******Choose the option******");
         System.out.println("1. Register your information");
         System.out.println("2. Order the food");
         System.out.println("3. Pay the order");
         System.out.println("4. Exit");
-        
-        
+         System.out.println("***********************************************");
         System.out.print("Please type the option: ");
         optionMenu = sc.nextInt();
             
@@ -47,7 +47,7 @@ public class Restuarant {
                     DataCreation.writeFile("Order.csv", email);
                 }
                 case 2 -> {
-                    while(!leave){
+                    do{
                         System.out.println("-----Menu Food-----");
                         System.out.println("1. Pizza");
                         System.out.println("2. Milanesa");
@@ -55,17 +55,30 @@ public class Restuarant {
                         System.out.println("4. Rissoto");
                         System.out.println("5. Drink");
                         System.out.println("6. Exit");
-                        
-                        try{
-                        
-                            System.out.println("Enter what you want to order");
-                            optionSubmenu = sc.nextInt();
-                            
-                            switch (optionSubmenu) {
-                                case 1 ->{
-                                    System.out.println("You order a Pizza");
-                                break;
+        
+                        System.out.print("Type the order: ");
+                        optionSubmenu= sc.nextInt();
+           
+                        switch(optionSubmenu){
+
+                            case 1 -> {
+                                System.out.println("You order a Pizza");
+                            }
+                            case 2 -> {
+                                System.out.println("You order a Milanesa");
+                            }
+                            case 3 -> {
+                                System.out.println("You order a Panini");
+                            }
+                            case 4 -> {
+                                System.out.println("Your order a Rissoto");
+                            }
+                            case 5 ->{
+                                System.out.println("You order a drink");
+                            }
+                            case 6 ->{
                                 }
+<<<<<<< HEAD
                                 case 2 ->{
                                     System.out.println("You order a Milanesa");
                                 break;
@@ -90,9 +103,12 @@ public class Restuarant {
                         }catch(InputMismatchException e){
                             System.out.println("You have to enter a number");
                             sc.next();
+=======
+                            }
+
+                            }while(optionSubmenu!=6);
+>>>>>>> 823dc083fd84b17b1595df91f546f1f6d9d2eaae
                         }
-                    }
-                }
                 case 3 -> {
                     System.out.println("Your bill has been paid ");
                 }
