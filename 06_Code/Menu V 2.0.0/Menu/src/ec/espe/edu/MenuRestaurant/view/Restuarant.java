@@ -11,7 +11,6 @@ public class Restuarant {
         Scanner sc = new Scanner(System.in);
         int optionMenu = 0;
         int optionSubmenu=0;
-        boolean leave = false;
         DataCreation.createFile("Order.csv");
         do{
         System.out.println("***********************************************");
@@ -78,36 +77,10 @@ public class Restuarant {
                             }
                             case 6 ->{
                                 }
-<<<<<<< HEAD
-                                case 2 ->{
-                                    System.out.println("You order a Milanesa");
-                                break;
-                                }
-                                case 3 ->{
-                                    System.out.println("You order a Panini");
-                                break;
-                                }
-                                case 4 ->{
-                                    System.out.println("Your order a Rissoto");
-                                break;
-                                }
-                                case 5 ->{
-                                    System.out.println("You order a drink");
-                                break;
-                                }
-                                case 6 ->{
-                                
-                                return;
-                                }
-                                }
-                        }catch(InputMismatchException e){
-                            System.out.println("You have to enter a number");
-                            sc.next();
-=======
                             }
 
                             }while(optionSubmenu!=6);
->>>>>>> 823dc083fd84b17b1595df91f546f1f6d9d2eaae
+
                         }
                 case 3 -> {
                     System.out.println("Your bill has been paid ");
@@ -120,5 +93,4 @@ public class Restuarant {
             
         }while(optionMenu != 4);
     }
-        
-}
+}      
