@@ -160,9 +160,9 @@ public class FrmLogin extends javax.swing.JFrame {
 
     //private FrmInterface frmIS;
     private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
-        /*FrmHelp FrmHelp = new FrmHelp();
+        FrmHelp FrmHelp = new FrmHelp();
         this.setVisible(false);
-        FrmHelp.setVisible(true);*/
+        FrmHelp.setVisible(true);
     }//GEN-LAST:event_btn_helpActionPerformed
 
     private void txt_username1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_username1MousePressed
