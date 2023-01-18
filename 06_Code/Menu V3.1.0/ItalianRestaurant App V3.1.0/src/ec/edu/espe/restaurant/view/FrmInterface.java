@@ -436,9 +436,9 @@ public class FrmInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_Panel_ExitMousePressed
 
     private void Panel_CustomersMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_CustomersMousePressed
-       // PanelTableOrder panelTC;
-       // panelTC = new PanelTableOrder();
-       // showPanel(panelTC);
+        PanelTableOrder panelTC;
+        panelTC = new PanelTableOrder();
+        showPanel(panelTC);
     }//GEN-LAST:event_Panel_CustomersMousePressed
 
     private void Panel_HomeScheduleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_HomeScheduleMouseEntered
@@ -465,10 +465,10 @@ public class FrmInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_Panel_UpdateMouseExited
 
     private void Panel_UpdateMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_UpdateMousePressed
-       // PanelUpdateOrder panelUC;
-        //panelUC = new PanelUpdateOrder();
+       PanelUpdateOrder panelUC;
+       panelUC = new PanelUpdateOrder();
         
-       // showPanel(panelUC);
+       showPanel(panelUC);
     }//GEN-LAST:event_Panel_UpdateMousePressed
 
     private void Panel_DeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_DeleteMouseEntered
@@ -480,10 +480,10 @@ public class FrmInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_Panel_DeleteMouseExited
 
     private void Panel_DeleteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_DeleteMousePressed
-      //  PanelDeleteOrder panelDelete;
-        //panelDelete = new PanelDeleteOrder();
+       PanelDeleteOrder panelDelete;
+       panelDelete = new PanelDeleteOrder();
                 
-       // showPanel(panelDelete);
+       showPanel(panelDelete);
     }//GEN-LAST:event_Panel_DeleteMousePressed
 
     /**
