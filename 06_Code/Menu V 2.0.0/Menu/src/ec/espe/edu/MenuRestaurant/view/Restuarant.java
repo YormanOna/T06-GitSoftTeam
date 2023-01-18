@@ -11,7 +11,6 @@ public class Restuarant {
         Scanner sc = new Scanner(System.in);
         int optionMenu = 0;
         int optionSubmenu=0;
-        boolean leave = false;
         DataCreation.createFile("Order.csv");
         do{
         System.out.println("***********************************************");
@@ -78,9 +77,17 @@ public class Restuarant {
                             }
                             case 6 ->{
                                 }
+<<<<<<< HEAD
 
                             }
                         }while(optionSubmenu!=6);
+=======
+                            }
+
+                            }while(optionSubmenu!=6);
+
+                        }
+>>>>>>> 1e16228e53c3c0357d1851fd69ff3a47cf16ecad
                 case 3 -> {
                     System.out.println("Your bill has been paid ");
                 }
@@ -92,5 +99,4 @@ public class Restuarant {
             
         }while(optionMenu != 4);
     }
-        
-}
+}      
