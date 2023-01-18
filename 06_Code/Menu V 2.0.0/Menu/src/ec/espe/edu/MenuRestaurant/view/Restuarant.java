@@ -78,37 +78,9 @@ public class Restuarant {
                             }
                             case 6 ->{
                                 }
-<<<<<<< HEAD
-                                case 2 ->{
-                                    System.out.println("You order a Milanesa");
-                                break;
-                                }
-                                case 3 ->{
-                                    System.out.println("You order a Panini");
-                                break;
-                                }
-                                case 4 ->{
-                                    System.out.println("Your order a Rissoto");
-                                break;
-                                }
-                                case 5 ->{
-                                    System.out.println("You order a drink");
-                                break;
-                                }
-                                case 6 ->{
-                                
-                                return;
-                                }
-                                }
-                        }catch(InputMismatchException e){
-                            System.out.println("You have to enter a number");
-                            sc.next();
-=======
-                            }
 
-                            }while(optionSubmenu!=6);
->>>>>>> 823dc083fd84b17b1595df91f546f1f6d9d2eaae
-                        }
+                            }
+                        }while(optionSubmenu!=6);
                 case 3 -> {
                     System.out.println("Your bill has been paid ");
                 }
