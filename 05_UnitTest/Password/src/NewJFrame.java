@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author GiftSoft TEAM, DCCO-ESPE
+ * @author Erick Moreira, DCCO-ESPE DEES Developers
  */
 
 public class NewJFrame extends javax.swing.JFrame {
