@@ -77,17 +77,10 @@ public class Restuarant {
                             }
                             case 6 ->{
                                 }
-<<<<<<< HEAD
 
-                            }
-                        }while(optionSubmenu!=6);
-=======
-                            }
-
-                            }while(optionSubmenu!=6);
+                        }while(optionSubmenu!=6)
 
                         }
->>>>>>> 1e16228e53c3c0357d1851fd69ff3a47cf16ecad
                 case 3 -> {
                     System.out.println("Your bill has been paid ");
                 }
