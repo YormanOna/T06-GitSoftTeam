@@ -1,8 +1,9 @@
+
 package campo_hora;
 
 /**
  *
- * @author GiftSoft TEAM, DCCO-ESPE
+ * @author Diego Ponce, DCCO-ESPE, Dev's Developers
  */
 public class Campo_Hora {
 
