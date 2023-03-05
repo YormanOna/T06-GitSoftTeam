@@ -9,7 +9,6 @@ import ec.edu.espe.restaurant.controller.CustomerController;
 import ec.edu.espe.restaurant.controller.ServiceController;
 import ec.edu.espe.restaurant.controller.MongoDBConnection;
 import ec.edu.espe.restaurant.model.Service;
-import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -428,7 +427,8 @@ SimpleDateFormat formDate = new SimpleDateFormat("dd-MM-yy");
     CustomerController customerController;
     customerController = new CustomerController("Orders");
         
-    MongoCollection<Document> collection = MongoDBConnection.database.getCollection("Orders");
+    MongoCollection<Document> collection;
+    collection = MongoDBConnection.database.getCollection("Orders");
     Document doc = collection.find(eq("identification", txt_Id.getText())).first();
         
     if(doc == null){
@@ -437,9 +437,9 @@ SimpleDateFormat formDate = new SimpleDateFormat("dd-MM-yy");
         }else if(txt_firstName.getText().isEmpty() || txt_lastName.getText().isEmpty() || txt_Id.getText().isEmpty() || txt_Cellphone.getText().isEmpty() || txt_Email.getText().isEmpty()  || cmb_Menu.getSelectedItem().toString().isEmpty()  ||txt_Cost.getText().isEmpty()  ||txt_Note.getText().isEmpty()  ||formDate.format(calendarDate.getDate()).isEmpty()  ||txt_Hour.getText().isEmpty() ){
             JOptionPane.showMessageDialog(null, "Invalid Register \n" +"Some text fields are empty", "Error",JOptionPane.ERROR_MESSAGE);
     }else{
-        int i =  JOptionPane.showConfirmDialog(this,"REGISTER ORDER?","Warning",JOptionPane.WARNING_MESSAGE);
+        int table =  JOptionPane.showConfirmDialog(this,"REGISTER ORDER?","Warning",JOptionPane.WARNING_MESSAGE);
         
-            if(i==0){
+            if(table==0){
                 customerController.createToDatabase(customerController.RegisterAndBuildDocument(txt_firstName.getText(), 
                     txt_lastName.getText(),
                     txt_Id.getText(),
@@ -461,7 +461,7 @@ SimpleDateFormat formDate = new SimpleDateFormat("dd-MM-yy");
                         txt_Note.setText("");
                         txt_Hour.setText("");
                 
-            }else if(i==1){
+            }else if(table==1){
                 this.setVisible(true);
             }
     }
@@ -509,8 +509,9 @@ SimpleDateFormat formDate = new SimpleDateFormat("dd-MM-yy");
     }//GEN-LAST:event_btn_RegisterMouseExited
 
     private void btn_CancelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CancelMousePressed
-        int i =  JOptionPane.showConfirmDialog(this,"Do you want to cancel? The data has not been saved","Error",JOptionPane.WARNING_MESSAGE);
-        if(i==0){
+        int reset;
+        reset =  JOptionPane.showConfirmDialog(this,"Do you want to cancel? The data has not been saved","Error",JOptionPane.WARNING_MESSAGE);
+        if(reset==0){
         txt_firstName.setText("");
         txt_lastName.setText("");
         txt_Id.setText("");
@@ -519,7 +520,7 @@ SimpleDateFormat formDate = new SimpleDateFormat("dd-MM-yy");
         txt_Cost.setText("");
         txt_Note.setText("");
         txt_Hour.setText("");
-        }else if(i==1){
+        }else if(reset==1){
             this.setVisible(true);
         }
     }//GEN-LAST:event_btn_CancelMousePressed

@@ -41,22 +41,20 @@ public class CustomerControllerTest {
     @Test
     public void testRegisterAndBuildDocument() {
         System.out.println("RegisterAndBuildDocument");
-        String firstName = "";
-        String lastName = "";
-        String identification = "";
-        String cellphone = "";
-        String email = "";
-        String typeOfService = "";
-        String cost = "";
-        String timeOfTreatment = "";
-        String date = "";
-        String hourOfAttention = "";
+        String firstName = "ALLAN";
+        String lastName = "Panchi";
+        String identification = "1727275198";
+        String cellphone = "0995151315";
+        String email = "allanpanchi66@gmail.com";
+        String typeOfService = "AAAA";
+        String cost = "1.71";
+        String timeOfTreatment = "12";
+        String date = "1233";
+        String hourOfAttention = "323";
         CustomerController instance = null;
         Document expResult = null;
         Document result = instance.RegisterAndBuildDocument(firstName, lastName, identification, cellphone, email, typeOfService, cost, timeOfTreatment, date, hourOfAttention);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -71,8 +69,6 @@ public class CustomerControllerTest {
         double expResult = 40;
         double result = instance.calculateTotalCost(20, 2);
         assertEquals(40, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

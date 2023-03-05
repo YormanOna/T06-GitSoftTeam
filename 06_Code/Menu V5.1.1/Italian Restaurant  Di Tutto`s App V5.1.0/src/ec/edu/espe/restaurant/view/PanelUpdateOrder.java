@@ -7,7 +7,6 @@ import ec.edu.espe.restaurant.controller.CustomerController;
 import ec.edu.espe.restaurant.controller.ServiceController;
 import ec.edu.espe.restaurant.model.Customer;
 import ec.edu.espe.restaurant.controller.MongoDBConnection;
-import java.awt.Color;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import org.bson.Document;
@@ -27,7 +26,8 @@ public class PanelUpdateOrder extends javax.swing.JPanel {
     public void updateCustomer(){
         CustomerController customerC;
         customerC = new CustomerController("Orders");
-        MongoCollection<Document> collection = MongoDBConnection.database.getCollection("Orders");
+        MongoCollection<Document> collection;
+        collection = MongoDBConnection.database.getCollection("Orders");
 
 
         Document doc = collection.find(eq("identification", txt_identification.getText())).first();      
@@ -364,7 +364,8 @@ public class PanelUpdateOrder extends javax.swing.JPanel {
     }//GEN-LAST:event_txt_CellphoneKeyPressed
 
     private void txt_CostKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_CostKeyTyped
-        char character = evt.getKeyChar();
+        char character;
+        character = evt.getKeyChar();
 
         if(((character < '0' || character > '9')) && (character != KeyEvent.VK_BACK_SPACE)
             && (character != '.' || txt_Cost.getText().contains(".") )){
@@ -377,9 +378,9 @@ public class PanelUpdateOrder extends javax.swing.JPanel {
     }//GEN-LAST:event_txt_HourActionPerformed
 
     private void txt_HourKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_HourKeyPressed
-        ServiceController h;
-        h = new ServiceController("Orders");
-        if(h.validateHour(txt_Hour.getText())== false){
+        ServiceController hour;
+        hour = new ServiceController("Orders");
+        if(hour.validateHour(txt_Hour.getText())== false){
 
         }
     }//GEN-LAST:event_txt_HourKeyPressed
@@ -390,14 +391,16 @@ public class PanelUpdateOrder extends javax.swing.JPanel {
 
     private void btn_UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_UpdateActionPerformed
     
-    MongoCollection<Document> collection = MongoDBConnection.database.getCollection("Orders");    
-    Document doc = collection.find(eq("identification",txt_identification.getText())).first();
+    MongoCollection<Document> collection;
+    collection = MongoDBConnection.database.getCollection("Orders");    
+    Document doc;
+    doc = collection.find(eq("identification",txt_identification.getText())).first();
     
     CustomerController customerController = new CustomerController("Orders");
     
-    int i =  JOptionPane.showConfirmDialog(this,"Update customer data?","Warning",JOptionPane.WARNING_MESSAGE);
+    int updateCustomer =  JOptionPane.showConfirmDialog(this,"Update customer data?","Warning",JOptionPane.WARNING_MESSAGE);
         
-      if(i==0){
+      if(updateCustomer==0){
         customerController.uploadToDatabase(doc, customerController.RegisterAndBuildDocument(txt_firstName.getText(),
         txt_lastName.getText(),
         txt_Id.getText(),
@@ -409,7 +412,7 @@ public class PanelUpdateOrder extends javax.swing.JPanel {
         txt_Date.getText(),
         txt_Hour.getText()));
         JOptionPane.showMessageDialog(this, "Data updated successfully");
-      }else if(i==1){
+      }else if(updateCustomer==1){
           this.setVisible(true);
       }
     }//GEN-LAST:event_btn_UpdateActionPerformed

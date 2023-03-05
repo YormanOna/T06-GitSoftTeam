@@ -13,7 +13,8 @@ public class CustomerController extends CrudMongoDBController implements CrudMon
         super(mongoCollection);
     } 
   
-    public Document RegisterAndBuildDocument(String firstName, String lastName, String identification, String cellphone, String email, String food, String cost, String note, String date, String hourOfAttention) {
+    public Document RegisterAndBuildDocument(String firstName, String lastName, String identification, 
+            String cellphone, String email, String food, String cost, String note, String date, String hourOfAttention) {
         Document document = new Document("firstName", firstName)
             .append("lastName", lastName)
             .append("identification", identification)

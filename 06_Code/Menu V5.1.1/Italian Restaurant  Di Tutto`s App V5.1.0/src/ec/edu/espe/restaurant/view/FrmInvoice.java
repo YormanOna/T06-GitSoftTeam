@@ -1,6 +1,5 @@
 package ec.edu.espe.restaurant.view;
 
-import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 import javax.swing.JOptionPane;
@@ -76,7 +75,9 @@ public class FrmInvoice extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
-        PrinterJob job= PrinterJob.getPrinterJob();
+        PrinterJob job;
+        
+        job = PrinterJob.getPrinterJob();
         
         job.setPrintable(panelInvoice1);
         

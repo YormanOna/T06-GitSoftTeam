@@ -10,7 +10,7 @@ import com.mongodb.client.MongoDatabase;
 
 public class MongoDBConnection {
     
-public static MongoDatabase database = null;
+public static MongoDatabase database = null; //Here is applied SIngleton 
     private MongoDBConnection(){}
     public static MongoDatabase connectDatabase(){
         

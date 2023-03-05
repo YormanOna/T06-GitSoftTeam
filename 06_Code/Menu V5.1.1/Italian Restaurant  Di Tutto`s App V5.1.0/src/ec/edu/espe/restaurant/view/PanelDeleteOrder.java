@@ -343,9 +343,9 @@ public class PanelDeleteOrder extends javax.swing.JPanel {
     }//GEN-LAST:event_txt_HourKeyTyped
 
     private void txt_HourKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_HourKeyPressed
-        ServiceController h;
-        h = new ServiceController("Orders");
-        if(h.validateHour(txt_Hour.getText())== false){
+        ServiceController hour;
+        hour = new ServiceController("Orders");
+        if(hour.validateHour(txt_Hour.getText())== false){
 
         }
     }//GEN-LAST:event_txt_HourKeyPressed
@@ -433,9 +433,9 @@ public class PanelDeleteOrder extends javax.swing.JPanel {
         MongoCollection<Document> collection = MongoDBConnection.database.getCollection("Orders");
 
         Document doc = collection.find(eq("identification", txt_idDelete.getText())).first();
-        int i =  JOptionPane.showConfirmDialog(this,"Delete Order?","Warning",JOptionPane.WARNING_MESSAGE);
+        int resetFields =  JOptionPane.showConfirmDialog(this,"Delete Order?","Warning",JOptionPane.WARNING_MESSAGE);
 
-        if(i==0){
+        if(resetFields==0){
             customerC.deleteToDatabase(doc);
             JOptionPane.showMessageDialog(this, "The client has been removed");
             txt_firstName.setText("");
@@ -449,7 +449,7 @@ public class PanelDeleteOrder extends javax.swing.JPanel {
             txt_Date.setText("");
             txt_Hour.setText("");
             txt_idDelete.setText("");
-        }else if(i==1){
+        }else if(resetFields==1){
             this.setVisible(true);
         }
 

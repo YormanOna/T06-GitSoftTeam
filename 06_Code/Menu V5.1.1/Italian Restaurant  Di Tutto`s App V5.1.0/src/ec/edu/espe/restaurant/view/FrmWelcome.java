@@ -1,7 +1,6 @@
 package ec.edu.espe.restaurant.view;
 
 
-import java.io.IOException;
 
 /**
  *

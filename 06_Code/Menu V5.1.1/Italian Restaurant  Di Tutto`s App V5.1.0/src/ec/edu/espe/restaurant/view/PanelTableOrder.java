@@ -40,24 +40,28 @@ public void loadCustomers(){
         
     MongoDBConnection.connectDatabase();
 
-    CodecRegistry codecRegistry = fromRegistries(MongoClient.getDefaultCodecRegistry(),fromProviders(PojoCodecProvider.builder().automatic(true).build()));
-    MongoDatabase db = MongoDBConnection.connectDatabase().withCodecRegistry(codecRegistry);
-    MongoCollection<Customer> collectionCustomer = db.getCollection("Orders", Customer.class); 
-    List<Customer> customers = collectionCustomer.find(new Document(), Customer.class).into(new ArrayList<>());
+    CodecRegistry codecRegistry;
+    codecRegistry = fromRegistries(MongoClient.getDefaultCodecRegistry(),fromProviders(PojoCodecProvider.builder().automatic(true).build()));
+    MongoDatabase db;
+    db = MongoDBConnection.connectDatabase().withCodecRegistry(codecRegistry);
+    MongoCollection<Customer> collectionCustomer;
+    collectionCustomer = db.getCollection("Orders", Customer.class); 
+    List<Customer> customers;
+    customers = collectionCustomer.find(new Document(), Customer.class).into(new ArrayList<>());
 
     Object[][] objects = new Object[customers.size()][10];
 
-    for (int i = 0; i < customers.size(); i++) {
-        objects[i][0] = customers.get(i).getFirstName();
-        objects[i][1] = customers.get(i).getLastName();
-        objects[i][2] = customers.get(i).getIdentification();
-        objects[i][3] = customers.get(i).getCellphone();
-        objects[i][4] = customers.get(i).getEmail();
-        objects[i][5] = customers.get(i).getFood();
-        objects[i][6] = customers.get(i).getCost();
-        objects[i][7] = customers.get(i).getNote();
-        objects[i][8] = customers.get(i).getDate();
-        objects[i][9] = customers.get(i).getHourOfAttention();
+    for (int dataClient = 0; dataClient < customers.size(); dataClient++) {
+        objects[dataClient][0] = customers.get(dataClient).getFirstName();
+        objects[dataClient][1] = customers.get(dataClient).getLastName();
+        objects[dataClient][2] = customers.get(dataClient).getIdentification();
+        objects[dataClient][3] = customers.get(dataClient).getCellphone();
+        objects[dataClient][4] = customers.get(dataClient).getEmail();
+        objects[dataClient][5] = customers.get(dataClient).getFood();
+        objects[dataClient][6] = customers.get(dataClient).getCost();
+        objects[dataClient][7] = customers.get(dataClient).getNote();
+        objects[dataClient][8] = customers.get(dataClient).getDate();
+        objects[dataClient][9] = customers.get(dataClient).getHourOfAttention();
 
         table_Customers.setModel(new javax.swing.table.DefaultTableModel(
                 objects,

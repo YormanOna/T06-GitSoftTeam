@@ -48,7 +48,8 @@ UserController userController;
     }
     @Override
     public Image getIconImage(){
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Images/icono.png"));
+        Image retValue;
+        retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Images/icono.png"));
         return retValue;
     }
 
@@ -219,7 +220,8 @@ UserController userController;
     }//GEN-LAST:event_txt_username1MousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        FrmHelp FrmHelp = new FrmHelp();
+        FrmHelp FrmHelp;
+        FrmHelp = new FrmHelp();
         this.setVisible(false);
         FrmHelp.setVisible(true); 
     }//GEN-LAST:event_jButton1ActionPerformed

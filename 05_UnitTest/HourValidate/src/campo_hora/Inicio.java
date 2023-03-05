@@ -129,11 +129,11 @@ public class Inicio extends javax.swing.JFrame {
     
     public Boolean Validar_CampoHora(String Hora){
         boolean b;
-        char[] a = Hora.toString().toCharArray();
+        char[] validateHour = Hora.toString().toCharArray();
         String[] c = Hora.split(":");
-        if ((a[0] == ' ') ||  (a[1] == ' ') || (a[2] == ' ')
+        if ((validateHour[0] == ' ') ||  (validateHour[1] == ' ') || (validateHour[2] == ' ')
  
-                || (a[3] == ' ') || (a[4] == ' ')
+                || (validateHour[3] == ' ') || (validateHour[4] == ' ')
                 || (getInteger(c[0]) > 24) || (getInteger(c[1]) > 59)){
             b = false;
         }else {

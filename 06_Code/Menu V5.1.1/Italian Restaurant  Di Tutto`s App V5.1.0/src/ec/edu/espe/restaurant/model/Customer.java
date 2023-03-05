@@ -14,7 +14,8 @@ public class Customer extends Service {
     protected String email;
     
 
-public Customer(String firstName, String lastName, String identification, String cellphone, String email, String food, String cost, String note, String date, String hourOfAttention) {
+public Customer(String firstName, String lastName, String identification, String cellphone, String email, 
+        String food, String cost, String note, String date, String hourOfAttention) {
     super(food, cost, note, date, hourOfAttention);
     this.firstName = firstName;
     this.lastName = lastName;

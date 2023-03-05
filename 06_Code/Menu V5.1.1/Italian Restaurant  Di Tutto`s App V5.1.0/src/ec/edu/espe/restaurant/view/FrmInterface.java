@@ -1,6 +1,5 @@
 package ec.edu.espe.restaurant.view;
 
-import ec.edu.espe.restaurant.controller.CustomerController;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
@@ -30,12 +29,12 @@ public class FrmInterface extends javax.swing.JFrame {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Images/icono.png"));
         return retValue;
     }
-    private void showPanel(JPanel p){
-        p.setSize(900,550);
-        p.setLocation(0,0);
+    private void showPanel(JPanel panel){
+        panel.setSize(900,550);
+        panel.setLocation(0,0);
         
         panel_allData.removeAll();
-        panel_allData.add(p,BorderLayout.CENTER);
+        panel_allData.add(panel,BorderLayout.CENTER);
         panel_allData.revalidate();
         panel_allData.repaint();
     }
@@ -380,15 +379,15 @@ public class FrmInterface extends javax.swing.JFrame {
 
     private void Panel_ExitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_ExitMousePressed
         
-      int i =  JOptionPane.showConfirmDialog(this,"Do you want to leave the program?","Warning",JOptionPane.WARNING_MESSAGE);
+      int panel =  JOptionPane.showConfirmDialog(this,"Do you want to leave the program?","Warning",JOptionPane.WARNING_MESSAGE);
         
-      if(i==0){
+      if(panel==0){
         FrmLogin FrmII;
         FrmII = new FrmLogin();
         
         FrmII.setVisible(true);
         this.setVisible(false);
-      }else if(i==1){
+      }else if(panel==1){
           this.setVisible(true);
       }
     }//GEN-LAST:event_Panel_ExitMousePressed
